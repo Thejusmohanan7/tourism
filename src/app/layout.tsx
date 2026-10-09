@@ -4,9 +4,9 @@ import { Cormorant_Garamond, Inter } from 'next/font/google';
 import { SITE } from './lib/site'
 
 const display = Cormorant_Garamond({
-  subsets: ['latin'], weight: ['500', '600', '700'], variable: '--font-display', display: 'swap',
+  subsets: ['latin'], weight: ['500', '600', '700'], variable: '--font-cormorant', display: 'swap',
 });
-const body = Inter({ subsets: ['latin'], variable: '--font-body', display: 'swap' });
+const body = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' });
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),

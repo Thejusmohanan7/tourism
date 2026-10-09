@@ -1,9 +1,10 @@
 import type { MetadataRoute } from 'next';
-import { SITE } from '@/lib/site';
-export const dynamic = 'force-static';
+import { SITE } from './lib/site';
+
+// Update this date whenever you publish meaningful changes.
+const LAST_UPDATED = '2026-10-10';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
   // Add each new page (e.g. /hotels, /houseboats, /kayaking) here.
-  return [{ url: `${SITE.url}/`, lastModified: now, changeFrequency: 'weekly', priority: 1 }];
+  return [{ url: `${SITE.url}/`, lastModified: LAST_UPDATED, changeFrequency: 'weekly', priority: 1 }];
 }
