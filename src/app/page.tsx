@@ -9,6 +9,8 @@ import Cta from './components/cta';
 import Footer from './components/footer';
 import { SITE } from './lib/site';
 import Reviews from './components/review';
+import About from './components/about';
+import Form from './components/form';
 
 export const metadata: Metadata = {
   title: { absolute: `Hotels, Houseboats, Kayaking & Holiday Packages | ${SITE.name}` },
@@ -21,12 +23,14 @@ export default function Home() {
       <Nav />
       <main id="top">
         <Hero />
+        <About />
         <Offerings />
         <Destinations />
         <Packages />
         <WhyUs />
         <Reviews />
         <Cta />
+        <Form />
       </main>
       <Footer />
     </>
