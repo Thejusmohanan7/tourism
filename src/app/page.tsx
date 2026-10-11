@@ -8,6 +8,7 @@ import WhyUs from './components/why-us';
 import Cta from './components/cta';
 import Footer from './components/footer';
 import { SITE } from './lib/site';
+import Reviews from './components/review';
 
 export const metadata: Metadata = {
   title: { absolute: `Hotels, Houseboats, Kayaking & Holiday Packages | ${SITE.name}` },
@@ -24,6 +25,7 @@ export default function Home() {
         <Destinations />
         <Packages />
         <WhyUs />
+        <Reviews />
         <Cta />
       </main>
       <Footer />
