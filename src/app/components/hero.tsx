@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { SITE } from '../lib/site';
 import { btn, container, eyebrow } from '../lib/ui';
 
@@ -7,9 +8,20 @@ export default function Hero() {
             aria-labelledby="hero-title"
             className="relative flex min-h-svh flex-col justify-center gap-12 overflow-hidden bg-[radial-gradient(120%_90%_at_80%_10%,var(--color-forest-soft),var(--color-forest)_45%,var(--color-forest-deep))] pt-28 pb-16 text-ivory md:pt-32"
         >
-            {/* background decoration */}
+            {/* background photo + overlays */}
             <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-                <span className="animate-float absolute bottom-[10%] -left-24 size-88 rounded-full bg-[#1e7a5c] opacity-35 blur-[70px] [animation-delay:-6s]" />
+                <Image
+                    src="/hero.jpg"
+                    alt=""
+                    fill
+                    priority
+                    sizes="100vw"
+                    className="object-cover object-[70%_center] md:object-center"
+                />
+                {/* darker on the left for text, lighter on the right to show the photo */}
+                <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(6,39,31,0.88)_0%,rgba(6,39,31,0.6)_45%,rgba(6,39,31,0.25)_100%)]" />
+                {/* fade into the next section */}
+                <div className="absolute inset-x-0 bottom-0 h-1/3 bg-[linear-gradient(to_top,rgba(6,39,31,0.7),transparent)]" />
                 <svg viewBox="0 0 1440 200" preserveAspectRatio="none" className="absolute -bottom-px h-36 w-full fill-ivory opacity-[0.07]">
                     <path d="M0 120 C240 40 480 200 720 120 S1200 40 1440 120 V200 H0Z" />
                 </svg>
