@@ -3,7 +3,7 @@ import { SITE } from '../lib/site';
 import { btn, container, h2 } from '../lib/ui';
 
 // TODO: replace with the client's real links
-const INSTAGRAM_URL = 'https://www.instagram.com/your_handle';
+const INSTAGRAM_URL = 'https://www.instagram.com';
 const GOOGLE_REVIEWS_URL = 'https://g.page/r/your-google-review-link';
 
 const explore: [label: string, href: string][] = [
