@@ -6,7 +6,7 @@ import { SITE } from '../lib/site';
 import { btn, container, eyebrow, h2, section } from '../lib/ui';
 
 // TODO: client's WhatsApp number with country code, digits only (e.g. 919876543210)
-const WHATSAPP_NUMBER = '919000000000';
+const WHATSAPP_NUMBER = '919567730666';
 
 const tripTypes = ['Holiday package', 'Hotel stay', 'Houseboat', 'Kayaking', 'Other'];
 

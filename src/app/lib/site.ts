@@ -8,6 +8,6 @@ export const SITE = {
         'tourism', 'Kerala tour packages', 'India holiday packages', 'international tour packages',
         'hotel booking online', 'houseboat in Alleppey', 'kayaking in Kerala', 'backwater tours',
     ],
-    phone: '+91 00000 00000', // TODO
+    phone: '+91 9567730666', // TODO
     email: 'hello@example.com', // TODO
 } as const;

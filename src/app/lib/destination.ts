@@ -1,5 +1,5 @@
 export type Destination = {
-    slug: string;    // image file: /public/destinations/<slug>.jpg
+    slug: string;
     name: string;
     caption: string;
     desc: string;
