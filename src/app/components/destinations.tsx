@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Reveal from './Reveal';
 import { INTERNATIONAL, DOMESTIC, type Destination } from '../lib/destination'
 import { SITE } from '../lib/site';
@@ -34,9 +35,9 @@ function Group({ id, title, items }: { id: string; title: string; items: Destina
                         </span>
                         <h4 className="font-display text-[1.85rem] font-semibold leading-[1.1] max-sm:text-[1.35rem]">{d.name}</h4>
                         <p className="mt-2 mb-3.5 text-[0.85rem] leading-[1.55] text-ivory/85 max-sm:text-[0.78rem]">{d.desc}</p>
-                        <a href="#contact" aria-label={`Enquire about ${d.name}`} className={`${link} self-start`}>
+                        <Link href={`/destinations/${d.slug}`} aria-label={`Enquire about ${d.name}`} className={`${link} self-start`}>
                             Enquire <b className={linkArrow}>→</b>
-                        </a>
+                        </Link>
                     </Reveal>
                 ))}
             </div>
