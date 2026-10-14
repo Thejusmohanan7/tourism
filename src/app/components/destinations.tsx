@@ -24,11 +24,12 @@ function Group({ id, title, items }: { id: string; title: string; items: Destina
                         as="article"
                         className={`group relative isolate flex aspect-[4/5] flex-col justify-end overflow-hidden rounded-[1.1rem] p-[1.4rem] text-ivory hover:-translate-y-2 hover:shadow-[0_28px_55px_rgba(6,39,31,0.4)] max-sm:p-4 before:absolute before:inset-0 before:z-[-1] before:bg-[linear-gradient(to_top,rgba(6,39,31,0.95)_6%,rgba(6,39,31,0.45)_52%,rgba(6,39,31,0.04))] after:pointer-events-none after:absolute after:inset-[0.7rem] after:scale-[0.96] after:rounded-[0.8rem] after:border after:border-gold after:opacity-0 after:transition-all after:duration-500 after:ease-premium hover:after:scale-100 hover:after:opacity-100 ${gradients[i % 4]}`}
                     >
+                        {/* card photo: public/<slug>/<slug>.jpg  (e.g. public/sri-lanka/sri-lanka.jpg) */}
                         <div
                             role="img"
                             aria-label={`${d.name} – ${d.caption}`}
                             className="absolute inset-0 z-[-2] bg-cover bg-center transition-transform duration-[1200ms] ease-premium group-hover:scale-[1.12]"
-                            style={{ backgroundImage: `url(/destinations/${d.slug}.jpg)` }}
+                            style={{ backgroundImage: `url(/${d.slug}/${d.slug}.jpg)` }}
                         />
                         <span className="mb-3 self-start rounded-full bg-gold-light px-3 py-1.5 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-forest-deep transition-colors duration-500 group-hover:bg-gold">
                             {d.caption}
@@ -36,7 +37,7 @@ function Group({ id, title, items }: { id: string; title: string; items: Destina
                         <h4 className="font-display text-[1.85rem] font-semibold leading-[1.1] max-sm:text-[1.35rem]">{d.name}</h4>
                         <p className="mt-2 mb-3.5 text-[0.85rem] leading-[1.55] text-ivory/85 max-sm:text-[0.78rem]">{d.desc}</p>
                         <Link href={`/destinations/${d.slug}`} aria-label={`Enquire about ${d.name}`} className={`${link} self-start`}>
-                            Enquire <b className={linkArrow}>→</b>
+                            Explore <b className={linkArrow}>→</b>
                         </Link>
                     </Reveal>
                 ))}
@@ -56,7 +57,7 @@ const jsonLd = {
             '@type': 'TouristDestination',
             name: d.name,
             description: d.desc,
-            image: `${SITE.url}/destinations/${d.slug}.jpg`,
+            image: `${SITE.url}/${d.slug}/${d.slug}.jpg`,
         },
     })),
 };
