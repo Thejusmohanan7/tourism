@@ -2,7 +2,7 @@ import Reveal from './Reveal';
 import { btn, container, eyebrow, h2, section } from '../lib/ui';
 
 // Photo from /public. Swap for a team or office photo later (e.g. '/about.jpg').
-const ABOUT_IMG = '/houseboats.jpg';
+const ABOUT_IMG = '/main.jpg';
 
 const points = [
     ['Handpicked stays', 'Hotels and houseboats we trust, chosen for comfort and service.'],

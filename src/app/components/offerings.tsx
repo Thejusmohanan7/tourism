@@ -5,7 +5,7 @@ import { container, eyebrow, gradients, h2, link, linkArrow, section } from '../
 const items = [
     { n: '01', t: 'India Trips', img: '/india-trips.jpg', d: 'Hill stations, heritage cities and coastlines, planned end to end.' },
     { n: '02', t: 'International', img: '/international.jpg', d: 'Dubai, Singapore, Bali and beyond with visas and stays handled.' },
-    { n: '03', t: 'Kayaking', img: '/kayaking.jpg', d: 'Paddle through quiet backwaters and mangrove channels at sunrise.' },
+    { n: '03', t: 'Trekking', img: '/trekking.jpg', d: 'Walk through misty hills, forest trails and mountain villages with friendly local guides.' },
     { n: '04', t: 'Houseboats', img: '/houseboats.jpg', d: 'Private Kerala houseboats with chef, deck and slow sunsets.' },
 ];
 
