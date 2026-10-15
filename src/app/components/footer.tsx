@@ -3,8 +3,8 @@ import { SITE } from '../lib/site';
 import { btn, container, h2 } from '../lib/ui';
 
 // TODO: replace with the client's real links
-const INSTAGRAM_URL = 'https://www.instagram.com';
-const GOOGLE_REVIEWS_URL = 'https://g.page/r/your-google-review-link';
+const INSTAGRAM_URL = 'https://www.instagram.com/keralatourpackagesss?srtk=YjAxeW00cHVpcnk0';
+const GOOGLE_REVIEWS_URL = 'https://share.google/QaA9fn4PfSkRwWlcY';
 
 const explore: [label: string, href: string][] = [
     ['Experiences', '#experiences'],
