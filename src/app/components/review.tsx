@@ -2,7 +2,7 @@ import Reveal from './Reveal';
 import { btn, container, eyebrow, h2, section } from '../lib/ui';
 
 // TODO: replace with the client's real Google reviews link
-const GOOGLE_REVIEWS_URL = 'https://g.page/r/your-google-review-link';
+const GOOGLE_REVIEWS_URL = 'https://share.google/QaA9fn4PfSkRwWlcY';
 
 const reviews = [
     {
