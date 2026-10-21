@@ -8,13 +8,22 @@ import { btn, container, eyebrow, h2, section } from '../lib/ui';
 // TODO: client's WhatsApp number with country code, digits only (e.g. 919876543210)
 const WHATSAPP_NUMBER = '919567730666';
 
-const tripTypes = ['Holiday package', 'Hotel stay', 'Houseboat', 'Kayaking', 'Other'];
+const tripTypes = [
+    'Honeymoon package',
+    'Family package',
+    'Group tour',
+    'Hotel bookings',
+    'Cab booking',
+    'Domestic & International package',
+];
+
+const hotelCategories = ['5 Star Luxury', '4 Star Premium', '3 Star Deluxe'];
 
 const field =
     'w-full rounded-xl border border-ivory-deep bg-white px-4 py-3 text-[0.95rem] text-ink outline-none transition-all duration-300 placeholder:text-ink/40 focus:border-gold focus:ring-4 focus:ring-gold/20';
 const label = 'mb-1.5 block text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-[#5b6b64]';
 
-// ---------- Animated dropdown (used for Trip type and Destination) ----------
+// ---------- Animated dropdown (used for Trip type, Destination and Hotel category) ----------
 type Group = { label?: string; options: string[] };
 
 type Props = {
@@ -186,6 +195,13 @@ function Dropdown({ id, name, label, groups, defaultValue = '', emptyLabel }: Pr
 export default function EnquiryForm() {
     const [sent, setSent] = useState(false);
 
+    // arriving from a destination page (/?destination=Bali#contact) preselects that destination
+    const [preset, setPreset] = useState('');
+    useEffect(() => {
+        const d = new URLSearchParams(window.location.search).get('destination');
+        if (d && [...DOMESTIC, ...INTERNATIONAL].some((x) => x.name === d)) setPreset(d);
+    }, []);
+
     const onSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const form = e.currentTarget;
@@ -200,6 +216,7 @@ export default function EnquiryForm() {
             `Email: ${get('email')}`,
             `Trip type: ${get('type')}`,
             `Destination: ${get('destination')}`,
+            `Hotel category: ${get('hotel')}`,
             `Travel month: ${get('month')}`,
             `Travellers: ${get('guests')}`,
             `Message: ${get('message')}`,
@@ -271,28 +288,35 @@ export default function EnquiryForm() {
                                 id="type"
                                 name="type"
                                 label="Trip type"
-                                defaultValue={tripTypes[0]}
+                                emptyLabel="Select trip type"
                                 groups={[{ options: tripTypes }]}
                             />
                             <Dropdown
+                                key={preset}
                                 id="destination"
                                 name="destination"
                                 label="Destination"
                                 emptyLabel="Not sure yet, suggest me"
+                                defaultValue={preset}
                                 groups={[
                                     { label: 'India', options: DOMESTIC.map((d) => d.name) },
                                     { label: 'International', options: INTERNATIONAL.map((d) => d.name) },
                                 ]}
                             />
-                            <div className="grid grid-cols-2 gap-5">
-                                <div>
-                                    <label htmlFor="month" className={label}>Travel month</label>
-                                    <input id="month" name="month" placeholder="e.g. December" className={field} />
-                                </div>
-                                <div>
-                                    <label htmlFor="guests" className={label}>Travellers</label>
-                                    <input id="guests" name="guests" type="number" min={1} max={50} defaultValue={2} className={field} />
-                                </div>
+                            <Dropdown
+                                id="hotel"
+                                name="hotel"
+                                label="Hotel category"
+                                emptyLabel="No preference"
+                                groups={[{ options: hotelCategories }]}
+                            />
+                            <div>
+                                <label htmlFor="month" className={label}>Travel month</label>
+                                <input id="month" name="month" placeholder="e.g. December" className={field} />
+                            </div>
+                            <div>
+                                <label htmlFor="guests" className={label}>Travellers</label>
+                                <input id="guests" name="guests" type="number" min={1} max={50} defaultValue={2} className={field} />
                             </div>
                             <div className="sm:col-span-2">
                                 <label htmlFor="message" className={label}>Message</label>
