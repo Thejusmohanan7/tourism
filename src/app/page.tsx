@@ -5,7 +5,6 @@ import Offerings from './components/offerings';
 import Destinations from './components/destinations';
 import Packages from './components/package';
 import WhyUs from './components/why-us';
-import Cta from './components/cta';
 import Footer from './components/footer';
 import { SITE } from './lib/site';
 import Reviews from './components/review';
@@ -13,7 +12,7 @@ import About from './components/about';
 import Form from './components/form';
 
 export const metadata: Metadata = {
-  title: { absolute: `Hotels, Houseboats, Kayaking & Holiday Packages | ${SITE.name}` },
+  title: { absolute: `Hotels, Houseboats, Trekking & Holiday Packages | ${SITE.name}` },
   alternates: { canonical: '/' },
 };
 
@@ -29,7 +28,6 @@ export default function Home() {
         <Packages />
         <WhyUs />
         <Reviews />
-        <Cta />
         <Form />
       </main>
       <Footer />
